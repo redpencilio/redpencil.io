@@ -1,0 +1,14 @@
+version: '3.4'
+
+x-logging:
+  &default-logging
+  driver: "json-file"
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  frontend:
+    image: redpencil/frontend-redpencil.io
+    restart: always
+    logging: *default-logging
