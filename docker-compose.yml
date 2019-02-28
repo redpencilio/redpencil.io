@@ -9,6 +9,6 @@ x-logging:
 
 services:
   frontend:
-    image: redpencil/frontend-redpencil.io
+    image: redpencil/frontend-redpencil.io:0.1.0
     restart: always
     logging: *default-logging
