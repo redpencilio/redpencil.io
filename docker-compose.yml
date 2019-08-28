@@ -13,8 +13,8 @@ services:
     links:
       - identifier:backend
     environment:
-      - GZIP: 'true'
-      - STATIC_FOLDERS_REGEX: '^\/(assets|fonts)\/.*'
+      GZIP: 'true'
+      STATIC_FOLDERS_REGEX: '^\/(assets|fonts)\/.*'
     volumes:
       - ./data/vacancies:/app/assets/vacancies
     restart: always
