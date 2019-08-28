@@ -9,9 +9,14 @@ x-logging:
 
 services:
   frontend:
-    image: redpencil/frontend-redpencil.io:0.2.0
+    image: redpencil/frontend-redpencil.io:0.2.1
     links:
       - identifier:backend
+    environment:
+      - GZIP: 'true'
+      - STATIC_FOLDERS_REGEX: '^\/(assets|fonts)\/.*'
+    volumes:
+      - ./data/vacancies:/app/assets/vacancies
     restart: always
     logging: *default-logging
   identifier:
